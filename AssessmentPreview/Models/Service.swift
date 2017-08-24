@@ -20,9 +20,11 @@ struct RequestMaster: Singleton,ServiceHost {
     static var host: String { return "swapi.co" }
     static var path: String? { return "api"}
     
-    enum endpoints {
-        case vehicles
-        case people
-        case starships
-    }
 }
+
+enum Endpoints {
+    case people
+    case starships
+    case vehicles
+}
+

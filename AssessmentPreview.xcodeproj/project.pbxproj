@@ -15,8 +15,11 @@
 		82DB7F521F4B359A006F5FEC /* EntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F511F4B359A006F5FEC /* EntryItem.swift */; };
 		82DB7F541F4B3B88006F5FEC /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F531F4B3B88006F5FEC /* Service.swift */; };
 		82DB7F591F4B3F30006F5FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F581F4B3F30006F5FEC /* AppDelegate.swift */; };
-		82DB7F5D1F4B4049006F5FEC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F5C1F4B4049006F5FEC /* DetailViewController.swift */; };
-		82DB7F5F1F4B465D006F5FEC /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F5E1F4B465D006F5FEC /* EntryTableViewController.swift */; };
+		82DB7F5D1F4B4049006F5FEC /* PeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F5C1F4B4049006F5FEC /* PeopleController.swift */; };
+		82DB7F631F4F4F93006F5FEC /* StarshipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F621F4F4F93006F5FEC /* StarshipController.swift */; };
+		82DB7F661F4F5087006F5FEC /* VehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F651F4F5087006F5FEC /* VehicleController.swift */; };
+		82DB7F681F4F84A7006F5FEC /* EntryPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F671F4F84A7006F5FEC /* EntryPointCell.swift */; };
+		82DB7F6A1F4F84BD006F5FEC /* EntryPointTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB7F691F4F84BD006F5FEC /* EntryPointTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +33,11 @@
 		82DB7F531F4B3B88006F5FEC /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Models/Service.swift; sourceTree = "<group>"; };
 		82DB7F561F4B3F1C006F5FEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		82DB7F581F4B3F30006F5FEC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
-		82DB7F5C1F4B4049006F5FEC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Controllers/DetailViewController.swift; sourceTree = "<group>"; };
-		82DB7F5E1F4B465D006F5FEC /* EntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
+		82DB7F5C1F4B4049006F5FEC /* PeopleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleController.swift; path = Controllers/PeopleController.swift; sourceTree = "<group>"; };
+		82DB7F621F4F4F93006F5FEC /* StarshipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StarshipController.swift; path = Controllers/StarshipController.swift; sourceTree = "<group>"; };
+		82DB7F651F4F5087006F5FEC /* VehicleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehicleController.swift; path = Controllers/VehicleController.swift; sourceTree = "<group>"; };
+		82DB7F671F4F84A7006F5FEC /* EntryPointCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryPointCell.swift; path = Views/EntryPointCell.swift; sourceTree = "<group>"; };
+		82DB7F691F4F84BD006F5FEC /* EntryPointTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryPointTableViewController.swift; path = Controllers/EntryPointTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,6 @@
 				82DB7F501F4B3544006F5FEC /* Models */,
 				82DB7F4A1F4B246F006F5FEC /* Reactive Frameworks */,
 				82DB7F331F4B0D54006F5FEC /* Main.storyboard */,
-				82DB7F361F4B0D54006F5FEC /* Assets.xcassets */,
-				82DB7F381F4B0D54006F5FEC /* LaunchScreen.storyboard */,
 				82DB7F551F4B3E35006F5FEC /* Supporting Files */,
 			);
 			path = AssessmentPreview;
@@ -100,7 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				82DB7F581F4B3F30006F5FEC /* AppDelegate.swift */,
+				82DB7F361F4B0D54006F5FEC /* Assets.xcassets */,
 				82DB7F561F4B3F1C006F5FEC /* Info.plist */,
+				82DB7F381F4B0D54006F5FEC /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,6 +114,7 @@
 		82DB7F5A1F4B3F37006F5FEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82DB7F671F4F84A7006F5FEC /* EntryPointCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -115,8 +122,10 @@
 		82DB7F5B1F4B3F3C006F5FEC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				82DB7F5C1F4B4049006F5FEC /* DetailViewController.swift */,
-				82DB7F5E1F4B465D006F5FEC /* EntryTableViewController.swift */,
+				82DB7F691F4F84BD006F5FEC /* EntryPointTableViewController.swift */,
+				82DB7F5C1F4B4049006F5FEC /* PeopleController.swift */,
+				82DB7F621F4F4F93006F5FEC /* StarshipController.swift */,
+				82DB7F651F4F5087006F5FEC /* VehicleController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,10 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DB7F631F4F4F93006F5FEC /* StarshipController.swift in Sources */,
+				82DB7F6A1F4F84BD006F5FEC /* EntryPointTableViewController.swift in Sources */,
 				82DB7F591F4B3F30006F5FEC /* AppDelegate.swift in Sources */,
 				82DB7F541F4B3B88006F5FEC /* Service.swift in Sources */,
-				82DB7F5D1F4B4049006F5FEC /* DetailViewController.swift in Sources */,
-				82DB7F5F1F4B465D006F5FEC /* EntryTableViewController.swift in Sources */,
+				82DB7F681F4F84A7006F5FEC /* EntryPointCell.swift in Sources */,
+				82DB7F5D1F4B4049006F5FEC /* PeopleController.swift in Sources */,
+				82DB7F661F4F5087006F5FEC /* VehicleController.swift in Sources */,
 				82DB7F521F4B359A006F5FEC /* EntryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
