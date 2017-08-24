@@ -59,13 +59,6 @@ class PeopleController: UIViewController {
         }
     }
     
-    /*
-     - request
-     -> signalProducer
-     -> signal
-     -> value
-    */
-    
     func networkSignal() {
         let fetchEndpoint = String(describing: Endpoints.people)
         let signalProducer:SignalProducer<Any, NetworkError> = RequestMaster.request(endpoint: fetchEndpoint)

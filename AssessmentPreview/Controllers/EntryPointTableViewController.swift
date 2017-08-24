@@ -25,7 +25,7 @@ class EntryPointTableViewController: UITableViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
-    // MARK: - Override methods
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +37,7 @@ class EntryPointTableViewController: UITableViewController {
         entries = (entryModel?.start())!
     }
     
+    // MARK: - TableView methods
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return (self.view.frame.height / CGFloat(entries.count))
     }
@@ -52,7 +53,6 @@ class EntryPointTableViewController: UITableViewController {
             cell.selectionStyle = .none
             cell.configure(img: entries[indexPath.row].img)
         }
-        
         return cell
     }
         
@@ -60,21 +60,17 @@ class EntryPointTableViewController: UITableViewController {
         
         guard let peopleDestination = self.storyboard?.instantiateViewController(withIdentifier: "PeopleControllerID") as? PeopleController else { fatalError("Could not find PeopleController")
         }
-        
         guard let starshipDestination = self.storyboard?.instantiateViewController(withIdentifier: "StarshipControllerID") as? StarshipController else { fatalError("Could not find StarshipController")
         }
-        
         guard let vehicleDestination = self.storyboard?.instantiateViewController(withIdentifier: "VehicleControllerID") as? VehicleController else { fatalError("Could not find VehicleController")
         }
         
         if entries[indexPath.row].title == String(describing: Endpoints.people) {
             self.navigationController?.pushViewController(peopleDestination, animated: true)
         }
-        
         if entries[indexPath.row].title == String(describing: Endpoints.starships) {
             self.navigationController?.pushViewController(starshipDestination, animated: true)
         }
-        
         if entries[indexPath.row].title == String(describing: Endpoints.vehicles) {
             self.navigationController?.pushViewController(vehicleDestination, animated: true)
         }

@@ -8,7 +8,6 @@ class StarshipController: PeopleController {
         let fetchEndpoint = String(describing: Endpoints.starships)
         let signalProducer:SignalProducer<Any, NetworkError> = RequestMaster.request(endpoint: fetchEndpoint)
         
-        // get signal from producer
         signalProducer.startWithSignal { (innerSignal, disposeBag) in
             mySignal = innerSignal
             disposebag = disposeBag
