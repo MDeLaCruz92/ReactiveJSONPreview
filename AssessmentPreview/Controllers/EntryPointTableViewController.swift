@@ -55,24 +55,30 @@ class EntryPointTableViewController: UITableViewController {
         }
         return cell
     }
-        
+    
+    // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let peopleDestination = self.storyboard?.instantiateViewController(withIdentifier: "PeopleControllerID") as? PeopleController else { fatalError("Could not find PeopleController")
-        }
-        guard let starshipDestination = self.storyboard?.instantiateViewController(withIdentifier: "StarshipControllerID") as? StarshipController else { fatalError("Could not find StarshipController")
-        }
-        guard let vehicleDestination = self.storyboard?.instantiateViewController(withIdentifier: "VehicleControllerID") as? VehicleController else { fatalError("Could not find VehicleController")
-        }
+        let entryTitle = entries[indexPath.row].title
         
-        if entries[indexPath.row].title == String(describing: Endpoints.people) {
-            self.navigationController?.pushViewController(peopleDestination, animated: true)
+        // assign stringEndpoint to it's title, then push the DetailController
+        if entryTitle == String(describing: Endpoints.people) {
+            if let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailControllerID") as? DetailController {
+                detailController.stringEndpoint = String(describing: Endpoints.people)
+                navigationController?.pushViewController(detailController, animated: true)
+            }
         }
-        if entries[indexPath.row].title == String(describing: Endpoints.starships) {
-            self.navigationController?.pushViewController(starshipDestination, animated: true)
+        if entryTitle == String(describing: Endpoints.starships) {
+            if let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailControllerID") as? DetailController {
+                detailController.stringEndpoint = String(describing: Endpoints.starships)
+                navigationController?.pushViewController(detailController, animated: true)
+            }
         }
-        if entries[indexPath.row].title == String(describing: Endpoints.vehicles) {
-            self.navigationController?.pushViewController(vehicleDestination, animated: true)
+        if entryTitle == String(describing: Endpoints.vehicles) {
+            if let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailControllerID") as? DetailController {
+                detailController.stringEndpoint = String(describing: Endpoints.vehicles)
+                navigationController?.pushViewController(detailController, animated: true)
+            }
         }
     }
     

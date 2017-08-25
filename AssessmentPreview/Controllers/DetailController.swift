@@ -2,7 +2,8 @@ import UIKit
 import ReactiveSwift
 import ReactiveJSON
 
-class PeopleController: UIViewController {
+// DetailController handles the ReactiveJSON library and fetches the endpoints
+class DetailController: UIViewController {
     
     // MARK: - Properties
     fileprivate var tableView: UITableView!
@@ -11,18 +12,22 @@ class PeopleController: UIViewController {
     typealias Dict = [String:Any]
     typealias _Signal = Signal<Any,NetworkError>
     
-    var itemsProperty:MutableProperty<[EntryItem]> = MutableProperty<[EntryItem]>([])
-    var disposebag:Disposable? = nil
+    var itemsProperty: MutableProperty<[EntryItem]> = MutableProperty<[EntryItem]>([])
+    var disposebag: Disposable? = nil
+    
+    var stringEndpoint: String? = nil
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        networkSignal()
+        
+        guard let endpoint = stringEndpoint else { return }
+        networkSignal(fetchEndpoint: endpoint)
     }
     
     // MARK: - TableView setup
-    private func setupTableView() {
+     func setupTableView() {
         tableView = UITableView(frame: view.frame)
         tableView.delegate = self
         tableView.dataSource = self
@@ -59,8 +64,7 @@ class PeopleController: UIViewController {
         }
     }
     
-    func networkSignal() {
-        let fetchEndpoint = String(describing: Endpoints.people)
+    func networkSignal(fetchEndpoint: String) {
         let signalProducer:SignalProducer<Any, NetworkError> = RequestMaster.request(endpoint: fetchEndpoint)
         
         // get signal from producer
@@ -76,7 +80,7 @@ class PeopleController: UIViewController {
     
 }
 
-extension PeopleController: UITableViewDataSource {
+extension DetailController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = itemsProperty.value[indexPath.row].model.value
@@ -84,7 +88,7 @@ extension PeopleController: UITableViewDataSource {
     }
 }
 
-extension PeopleController: UITableViewDelegate {
+extension DetailController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemsProperty.value.count
     }
@@ -93,4 +97,3 @@ extension PeopleController: UITableViewDelegate {
         return 50
     }
 }
-

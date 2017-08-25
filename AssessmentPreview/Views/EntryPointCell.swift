@@ -21,7 +21,7 @@ class EntryPointCell: UITableViewCell {
         super.init(coder: aDecoder)
         setup()
     }
-    
+    // seting up the cells' view
     fileprivate func setup() {
         self.backgroundColor = .clear
         imgView = UIImageView(frame: self.frame)

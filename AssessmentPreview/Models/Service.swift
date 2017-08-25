@@ -15,11 +15,9 @@ struct RequestMaster: Singleton,ServiceHost {
     typealias Instance  = RequestMaster
     private(set) static var shared = Instance()
     
-    
     static var scheme: String { return "https" }
     static var host: String { return "swapi.co" }
     static var path: String? { return "api"}
-    
 }
 
 enum Endpoints {
@@ -27,4 +25,3 @@ enum Endpoints {
     case starships
     case vehicles
 }
-
