@@ -45,3 +45,4 @@ class EntryPointCell: UITableViewCell {
     }
 
 }
+
